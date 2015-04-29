@@ -43,8 +43,16 @@ group :development, :test do
   gem 'spring'
 
     gem 'rspec-rails'
+    gem 'guard-rspec'
+    gem 'spork-rails'
+end
+
+group :test do
     gem 'capybara'
     gem 'selenium-webdriver'
+
+  # Linux: раскомментируйте эти строки.
+   gem 'libnotify'
 end
 
 
