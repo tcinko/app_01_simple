@@ -6,22 +6,24 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <%= render 'layouts/forIExplorerShim' %>
-   
+
 </head>
 <body>
 
 	<%= render 'layouts/header' %>
      <div class="container">
-     
+
 		<% flash.each do |key, value| %>
-			<div class="alert alert-<%= key %>"><%= value %></div>
+<!--		<div class="alert alert-<%= key %>"> <%= value %> </div>
+				на еrb это будет выглядеть так:										-->
+			<%= content_tag(:div, value, class: "alert alert-#{key}") %>
 		<% end %>
 
 		<%= yield %>
-		<%= render 'layouts/footer' %>	
+		<%= render 'layouts/footer' %>
 		<%= debug(params) if Rails.env.development? %>
      </div>
-     
+
 
 </body>
 </html>
