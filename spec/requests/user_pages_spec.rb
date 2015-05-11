@@ -24,7 +24,7 @@ describe "User pages:" do
 			it "should not create a user" do
 				expect { click_button submit }.not_to change(User, :count)
 
-# 				эквивалентно:       -eq
+#  эквивалентно:       -eq
 # 				init_count = User.count
 # 				click_button "Create my account"
 # 				final_count = User.count
@@ -46,11 +46,12 @@ describe "User pages:" do
 
 			describe "after saving the user:" do
 				before { click_button submit }
-# 				let(:user) { User.find_by(email: 'example@railstutorial.org') }
+ 				let(:user) { User.find_by(email: 'example@railstutorial.org') }
 # 				let(:user) { FactoryGirl.create(:user) }
 #	не работает
-#				it { should have_title(user.name) }
+# 				it { should have_title(user.name) }
 				it { should have_selector('div.alert.alert-success', text: 'Welcome to') }
+				it { should have_link('Sign out') }
 			end
 		end
 
@@ -60,6 +61,12 @@ describe "User pages:" do
 			it { should have_title('Sign up') }
 			it { should have_content('error') }
 		end
+
+# don't work
+# 		describe "followed by signout:" do
+# 			before { click_link "Sign out" }
+# 			it { should have_link('Sign in') }
+# 		end
 
 	end
 

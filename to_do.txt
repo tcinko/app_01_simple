@@ -1,3 +1,7 @@
 - button `submit` in `sign up` form too whight
 - align `sign in` form to center (.conteiner)
 - don't works <li class="divider"></li> in bootstrap `dropdown menu` in 'header'
+- don't passed test `it { should have_title(user.name) }` after `sign in` (realy title is correct)
+    "no method name for class nil"
+- don't passed test `it { should have_link('Sign in') }` after `sign out` (realy work's)
+    "element not found"
