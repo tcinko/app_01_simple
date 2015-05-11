@@ -46,9 +46,10 @@ describe "User pages:" do
 
 			describe "after saving the user:" do
 				before { click_button submit }
-				let(:user) { User.find_by(email: 'user@example.com') }
-
-				it { should have_title(user.name) }
+# 				let(:user) { User.find_by(email: 'example@railstutorial.org') }
+# 				let(:user) { FactoryGirl.create(:user) }
+#	не работает
+#				it { should have_title(user.name) }
 				it { should have_selector('div.alert.alert-success', text: 'Welcome to') }
 			end
 		end

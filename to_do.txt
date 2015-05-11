@@ -1,0 +1,3 @@
+- button `submit` in `sign up` form too whight
+- align `sign in` form to center (.conteiner)
+- don't works <li class="divider"></li> in bootstrap `dropdown menu` in 'header'

@@ -22,6 +22,7 @@ describe "User:" do
 	it { should respond_to(:password) }
 	it { should respond_to(:password_confirmation) }
 	it { should respond_to(:authenticate) }
+	it { should respond_to(:remember_token) }
 
 	it { should be_valid }
 
@@ -103,8 +104,8 @@ describe "User:" do
 
 #--------------- test authentication ------------------------------
 
-	describe "with a password that's too short" do
-		before { @user.password = @user.password_confirmation = "a" * 5 }
+	describe "with a password that's too short:" do
+		before { @user.password = @user.password_confirmation = "a"*2  }
 		it { should be_invalid }
 	end
 
@@ -124,6 +125,18 @@ describe "User:" do
 			# `specify` - синоним `it`
 		end
 	end
+
+
+# ------------------- test token ---------------------------------------------
+
+	describe "remember token:" do
+		before { @user.save }
+#		its(:remember_token) { should_not be_blank }
+# 		-eq эквивалентно, но выдает ошибку, что `its` метода нет
+ 		it { expect(@user.remember_token).not_to be_blank }
+	end
+
+
 
 
 
