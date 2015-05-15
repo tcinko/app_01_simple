@@ -47,8 +47,15 @@ class UsersController < ApplicationController
   end
 
   def destroy
-	User.find(params[:id]).destroy
-    flash[:success] = "User deleted."
+	@user = User.find(params[:id])
+
+	unless @user.admin?
+		@user.destroy
+		flash[:success] = "User deleted."
+	else
+		flash[:warning] = "Delete admin record! Rolback transaction!"
+	end
+	
     redirect_to users_url
   end
 
@@ -57,7 +64,7 @@ class UsersController < ApplicationController
   private
 	def user_params
 		params.require(:user).permit(:name, :email, :password,
-		                             :password_confirmation)
+		                             :password_confirmation, :admin)
 	end
 
 
