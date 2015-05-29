@@ -1,7 +1,7 @@
 @import "bootstrap";
 
 $lightGray: #999;
-
+$grayMediumLight: #eaeaea;
 /*------------------------------------------------------------------------------------------*/
 /* universal */
 
@@ -23,6 +23,7 @@ textarea {
 
 .center {
   text-align: center;
+   background-color: $grayMediumLight;
   h1 {
 	margin-bottom: 10px;
   }
@@ -84,7 +85,7 @@ p {
 	float: right;
 	list-style: none;
 	li {
-		float: left;
+		float:       left;
 		margin-left: 10px;
 	}
   }
@@ -126,7 +127,6 @@ footer {
  *
 /* mixins, variables, etc. */
 
-$grayMediumLight: #eaeaea;
 
 @mixin box_sizing {
   -moz-box-sizing: 	  border-box;
@@ -151,15 +151,20 @@ $grayMediumLight: #eaeaea;
 /* align = `left` 								*/
 
 aside {
+  width: 270px;
+  border: 2px solid;
+  border-color: $lightGray;
+  margin: 1px;
   section {
     padding: 10px 0;
     border-top: 1px solid $lightGray;
     &:first-child {
-      border: 0;
+      border: 5px;
       padding-top: 0;
     }
     span {
       display: block;
+	  border: 0px solid;
       margin-bottom: 3px;
       line-height: 1;
     }
@@ -182,8 +187,12 @@ aside {
 /* forms */
 
 .row {
-  width:  20%;
-  margin-bottom: 15px;
+  width: 90%;
+  margin-bottom: 10px;
+}
+
+.offset3{
+  width: 40%;
 }
 
 input, textarea, select, .uneditable-input {
@@ -191,11 +200,21 @@ input, textarea, select, .uneditable-input {
   width:  100%;
   margin-bottom: 15px;
   @include box_sizing;
+  height: 120px;
 }
 
 input {
   height: auto !important;
 }
+
+.btn{
+  width: 40%;
+}
+
+.btn-primary{
+  width: 150px;
+}
+
 
 #error_explanation {
   color: #f01;
@@ -213,8 +232,7 @@ input {
   */
 }
 
-
-/*-----------------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*/
 /* Users index */
 
 .users {
@@ -229,3 +247,40 @@ input {
     }
   }
 }
+
+/*----------------------------------------------------------------------------*/
+/* microposts */
+
+.microposts {
+  list-style: none;
+  margin: 10px 0 0 0;
+
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+}
+.content {
+  display: block;
+}
+.timestamp {
+  color: $lightGray;
+}
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+/*aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }
+}*/
+
+.span8{
+  width: 70%;
+  margin-left: 300px;
+}
+
+

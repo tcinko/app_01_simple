@@ -1,5 +1,3 @@
-- button `submit` in `sign up` form too whight
-
 - align `sign in` form to center (.conteiner)
 
 - don't works <li class="divider"></li> in bootstrap `dropdown menu` in 'header'
@@ -13,9 +11,9 @@
 - in `update profile` form, then password and confirm fields are empty show only 1 error's: "password can not be blank"
     it's right or bag?
 
-- in form_for @user don't works CSS class .field_whith_errors
-
 - don't passed test `User pages: edit profile user: with valid information:
      should have link "Sign out", {:href=>"/signout"}` (realy link presents)
 
 - test down_menu `Acount` for long name user
+
+- in action `show ` controller `user` wrap @micropost in to `html_safe`

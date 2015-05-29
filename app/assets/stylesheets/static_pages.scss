@@ -1,3 +1,40 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#micropost_content {
+/*   width: 450px; */
+/*   height: 50px; */
+  border: solid 2px #006699;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+#barbox {
+  float: right;
+  height: 16px;
+  background-color: #FFFFFF;
+  width: 100px;
+  border: solid 1px #000;
+  margin-right: 3px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+
+#bar {
+  background-color: #5fbbde;
+  width: 0px;
+  height: 100%;
+}
+
+
+
+#count {
+  float: right;
+  margin-right: 7px;
+  font-family: 'Georgia', Times New Roman, Times, serif;
+  font-size: 14px;
+  font-weight: bold;
+   color: #666665;
+}
