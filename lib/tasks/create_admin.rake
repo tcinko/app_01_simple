@@ -6,5 +6,9 @@ namespace :db do
                          password: "111",
                          password_confirmation: "111",
                          admin: true)
+    name4 = User.create!(name: "name4",
+                         email: "name4@email.com",
+                         password: "444",
+                         password_confirmation: "444")
    end
 end

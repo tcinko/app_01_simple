@@ -17,3 +17,5 @@
 - test down_menu `Acount` for long name user
 
 - in action `show ` controller `user` wrap @micropost in to `html_safe`
+
+- When user write his first post after sign_in, `count_down` function (cofee-script) don't works

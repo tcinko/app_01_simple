@@ -5,8 +5,7 @@ class UsersController < ApplicationController
 
   def index
 # 	  @users = User.all
-	  WillPaginate.per_page = 10
-	  @users = User.paginate(page: params[:page])
+	  @users = User.paginate(page: params[:page], per_page: 10)
   end
 
   def show
@@ -61,14 +60,30 @@ class UsersController < ApplicationController
   end
 
 
+  def following
+		@title = "Following"
+		@user  = User.find(params[:id])
+		@users = @user.followed_users.paginate(page: params[:page])
+		render 'show_follow'
+  end
 
-  private
+  def followers
+		@title = "Followers"
+		@user  = User.find(params[:id])
+		@users = @user.followers.paginate(page: params[:page])
+		render 'show_follow'
+  end
+
+
+
+private
+
 	def user_params
 		params.require(:user).permit(:name, :email, :password, :password_confirmation, :admin)
 	end
 
 
-# Before filters
+# ----- Before filters --------------------------------------------
 
     def correct_user
         @user = User.find(params[:id])

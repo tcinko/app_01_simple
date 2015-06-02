@@ -26,7 +26,12 @@ describe "User:" do
 	it { should respond_to(:admin) 			}
 	it { should respond_to(:microposts) 	}
 	it { should respond_to(:feed) 			}
-
+	it { should respond_to(:relationships)  }
+	it { should respond_to(:followed_users) }
+	it { should respond_to(:reverse_relationships) }
+	it { should respond_to(:followers) 		}
+	it { should respond_to(:follow!) 		}
+	it { should respond_to(:unfollow!) 		}
 	it { should be_valid 	 }
 	it { should_not be_admin }
 
@@ -149,7 +154,7 @@ describe "User:" do
 	end
 
 
-#---------------------- test microposts -------------------------------------------------
+#---------------------- test microposts ------------------------------------------------
 	describe "micropost associations:" do
 
 		before { @user.save }
@@ -177,7 +182,11 @@ describe "User:" do
 			let(:unfollowed_post) do
 				FactoryGirl.create(:micropost, user: FactoryGirl.create(:user))
 			end
-
+			
+			before do
+				@user.follow!(followed_user)
+				3.times { followed_user.microposts.create!(content: "Lorem ipsum") }
+			end
 # 			expect(:feed).should include(newer_micropost)
 # 			expect(:feed).should include(older_micropost)
 # 			expect(:feed).should_not include(unfollowed_post)
@@ -185,6 +194,31 @@ describe "User:" do
 
 	end # end test microposts section
 
+
+#-------------------- test following ----------------------------------------------------
+
+	describe "following:" do
+		let(:other_user) { FactoryGirl.create(:user) }
+		before do
+			@user.save
+			@user.follow!(other_user)
+		end
+
+		it { should be_following(other_user) }
+# 		its(:followed_users) { should include(other_user) }
+
+# 		describe "followed user:" do
+# 			subject { other_user }
+#  			its(:followers) { should include(@user) }
+# 		end
+
+		describe "and unfollowing:" do
+			before { @user.unfollow!(other_user) }
+
+			it { should_not be_following(other_user) }
+# 			its(:followed_users) { should_not include(other_user) }
+		end
+	end
 
 
 end

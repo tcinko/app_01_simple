@@ -148,7 +148,6 @@ footer {
 /*------------------------------------------------------------------------------------*/
 /* sidebar */
 /* для аватара на странице профиля пользователя */
-/* align = `left` 								*/
 
 aside {
   width: 270px;
@@ -181,7 +180,43 @@ aside {
 .gravatar {
   float: left;
   margin-right: 10px;
+  border: 4px solid;
+  border-color: red;
 }
+
+				/*отображение статистики на странице профиля*/
+.stats {
+  overflow: auto;
+  a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid $lightGray;;
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: blue;
+    }
+  }
+  strong {
+    display: block;
+  }
+}
+
+.user_avatars {
+  overflow: auto;
+  margin-top: 10px;
+  .gravatar {
+    margin: 1px 1px;
+	border: 1px solid;
+	border-color: green;
+  }
+}
+
+
 
 /*-----------------------------------------------------------------------------------*/
 /* forms */
@@ -269,6 +304,8 @@ input {
 .gravatar {
   float: left;
   margin-right: 10px;
+  border: 4px solid;
+  border-color: maroon;
 }
 
 /*aside {
