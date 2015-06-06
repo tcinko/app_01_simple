@@ -9,8 +9,7 @@ gem 'faker'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# gem 'sqlite3'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -56,6 +55,7 @@ group :development, :test do
     gem 'rspec-rails'
     gem 'guard-rspec'
     gem 'spork-rails'
+    gem 'sqlite3'
 end
 
 group :test do
