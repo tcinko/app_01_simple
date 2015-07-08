@@ -19,3 +19,6 @@
 - in action `show ` controller `user` wrap @micropost in to `html_safe`
 
 - When user write his first post after sign_in, `count_down` function (cofee-script) don't works
+
+- из домашней страницы пользователя, когда отправляется сообщение, к каждому слову добавляется "-ок"
+  при этом эти символы видны только на домашней странице пользователя. Когда другие пользователи просматривают - все нормально
