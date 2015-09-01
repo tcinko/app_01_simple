@@ -1,5 +1,3 @@
-- align `sign in` form to center (.conteiner)
-
 - don't works <li class="divider"></li> in bootstrap `dropdown menu` in 'header'
 
 - don't passed test `it { should have_title(user.name) }` after `sign in` (realy title is correct)
@@ -9,7 +7,7 @@
     "element not found"
 
 - in `update profile` form, then password and confirm fields are empty show only 1 error's: "password can not be blank"
-    it's right or bag?
+    it's right or bug?
 
 - don't passed test `User pages: edit profile user: with valid information:
      should have link "Sign out", {:href=>"/signout"}` (realy link presents)
@@ -18,5 +16,4 @@
 
 - in action `show ` controller `user` wrap @micropost in to `html_safe`
 
-- из домашней страницы пользователя, когда отправляется сообщение, к каждому слову добавляется "-ок"
-  при этом эти символы видны только на домашней странице пользователя. Когда другие пользователи просматривают - все нормально
+- сгенерировать документацию.

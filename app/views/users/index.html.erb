@@ -5,10 +5,10 @@
 <%= will_paginate %>
 
 <ul class="users">
-	<%= render @users %>
+  <%= render @users %>
 
 <!--	-eq
-	<% @users.each do |user| %>
+  <% @users.each do |user| %>
     <li>
       <%= gravatar_for(user, size:55) %>
       <%= link_to user.name, user %>
